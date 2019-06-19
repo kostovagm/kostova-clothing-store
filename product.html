@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ruby Clothes | Dresses | Sweet Amber</title>
+    <meta name="description" content="Sweet Amber, a strapless summer dress">
+    <meta name="author" content="Gabriela Kostova">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+    <!--Body header appears on all pages-->
+    <header class="sticky-topbar">
+
+      <!--Navigation-->
+      <nav>
+        <!--Menu icon-->
+        <button class="icon menu-toggle" type="button" name="menu-toggle">
+          <img src="img/menu-icon.svg" alt="Toggle menu">
+        </button>
+
+        <!--Section expands when menu icon clicked-->
+        <section class="menu-open">
+          <!--Nav header-->
+          <h2 class="instructions bold uppercase">Shop by category</h2>
+
+          <!--Menu tabs-->
+          <ul>
+            <li class="tabs">
+              <a href="#">All Clothing</a>
+            </li>
+
+            <li class="tabs">
+              <a href="index.html">Dresses</a>
+            </li>
+
+            <li class="tabs">
+              <a href="#">Tops</a>
+            </li>
+
+            <li class="tabs">
+              <a href="#">Pants</a>
+            </li>
+
+            <li class="tabs">
+              <a href="#">Skirts</a>
+            </li>
+
+            <li class="tabs">
+              <a href="#">Accessories</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+
+      <!--Logo-->
+      <span class="logo">
+        <a href="index.html">
+          <img src="img/rubylogo.svg" alt="Ruby logo">
+        </a>
+      </span>
+
+      <!--Search-->
+      <section class="search">
+        <!--Search button-->
+        <button class="icon" type="button" name="toggle-search-bar">
+          <img src="img/search-icon.svg" alt="Toggle search bar">
+        </button>
+
+        <!--Search area - expands when search icon clicked-->
+        <form class="searcharea">
+          <input type="search" id="product-search" name="q" placeholder="type keyword">
+        </form>
+      </section>
+
+      <!--Shopping bag link-->
+      <div class="icon shopping-bag">
+        <a href="#">
+          <img src="img/shopping-icon.svg" alt="Go to shopping bag">
+        </a>
+      </div>
+    </header>
+
+    <main class="product-page">
+      <!--product-->
+      <article class="product-full">
+        <div class="product-images">
+          <div class="product-img">
+            <img src="img/sweet-amber.jpg" alt="Sweet Amber Dress">
+            <div class="arrow left">
+              <a href="#">
+                <img src="img/back-icon.svg" alt="Previous image">
+              </a>
+            </div>
+            <div class="arrow right">
+              <a href="#">
+                <img src="img/next-icon.svg" alt="Next image">
+              </a>
+            </div>
+          </div>
+
+          <div class="slideshow">
+            <div class="slideshow-img">
+              <a href="#">
+                <img src="img/sweet-amber.jpg" alt="Sweet Amber Dress">
+              </a>
+            </div>
+
+            <div class="slideshow-img">
+              <a href="#">
+                <img src="img/sweet-amber.jpg" alt="Sweet Amber Dress">
+              </a>
+            </div>
+
+            <div class="slideshow-img">
+              <a href="#">
+                <img src="img/sweet-amber.jpg" alt="Sweet Amber Dress">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-description">
+          <!--Product overview-->
+          <div class="product-primary-information">
+            <h1 class="product-title">Sweet Amber</h1>
+            <p class="one-line-product-description">Strapless summer dress</p>
+            <p class="price">CAD $65.00</p>
+          </div>
+
+          <!--Product form-->
+          <div class="selection-form">
+            <!--color selection-->
+            <section class="color-selection">
+              <h2 class="selection">Selected color: <span class="bold">Strawberry</span></h2>
+              <ul class="color-options">
+                <li class="inline-block">
+                  <button type="button" class="color-box color-strawberry selected" name="choose-strawberry">
+                  </button>
+                </li>
+                <li class="inline-block">
+                  <button type="button" class="color-box color-lime" name="choose-lime">
+                  </button>
+                </li>
+              </ul>
+            </section>
+
+            <!--size selection-->
+            <section class="size-selection">
+              <h2 class="selection">Selected size: <span class="bold">Small</span></h2>
+              <ul class="size-options">
+                <li class="inline-block">
+                  <button type="button" class="size-box" name="choose-xs">
+                    XS
+                  </button>
+                </li>
+
+                <li class="inline-block">
+                  <button type="button" class="size-box selected" name="choose-s">
+                    S
+                  </button>
+                </li>
+
+                <li class="inline-block">
+                  <button type="button" class="size-box" name="choose-m">
+                    M
+                  </button>
+                </li>
+
+                <li class="inline-block">
+                  <button type="button" class="size-box" name="choose-l">
+                    L
+                  </button>
+                </li>
+
+                <li class="inline-block">
+                  <button type="button" class="size-box" name="choose-xl">
+                    XL
+                  </button>
+                </li>
+              </ul>
+              <div class="sizing-guide">
+                <a href="#">Review sizing guide</a>
+              </div>
+            </section>
+
+            <!--Add to bag button-->
+            <div class="call-to-action">
+              <button type="submit" class="action-button" name="add-to-bag-button">
+                Add to bag
+              </button>
+            </div>
+          </div>
+
+          <!--Product details-->
+          <ul class="product-details">
+            <li class="tabs">
+              <button class="click-for-info" type="button" name="product-description">
+                <span class="subsection">Product Description</span>
+                <span class="arrow">
+                  <img src="img/expand-icon.svg" alt="Expand section">
+                </span>
+              </button>
+
+              <p class="expanded-description">
+                Sweet Amber is a strapless summer dress with a one-of-a-kind floral pattern. It is made of 100% organic cotton.
+              </p>
+            </li>
+
+            <li class="tabs">
+              <button class="click-for-info" type="button" name="product-care">
+                <span class="subsection">Care</span>
+                <span class="arrow">
+                  <img src="img/expand-icon.svg" alt="Expand section">
+                </span>
+              </button>
+
+              <p class="expanded-description">
+                Hand wash in cold water.
+              </p>
+            </li>
+
+            <li class="tabs last-tab">
+              <button class="click-for-info" type="button" name="product-returns">
+                <span class="subsection">Returns</span>
+                <span class="arrow">
+                  <img src="img/expand-icon.svg" alt="Expand section">
+                </span>
+              </button>
+
+              <p class="expanded-description">
+                Return garment inside original packaging within seven days of purchasing.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
+
+    <!--footer-->
+    <footer>
+      <!--social media icons-->
+      <ul class="social-media">
+        <li class="icon">
+          <a href="#">
+            <img src="img/twitter-icon.svg" alt="Twitter">
+          </a>
+        </li>
+
+        <li class="icon">
+          <a href="#">
+            <img src="img/fb-icon.svg" alt="Facebook">
+          </a>
+        </li>
+
+        <li class="icon">
+          <a href="#">
+            <img src="img/insta-icon.svg" alt="Instagram">
+          </a>
+        </li>
+      </ul>
+
+      <div class="copyright">
+        &copy; 2019 Ruby
+      </div>
+    </footer>
+  </body>
+</html>

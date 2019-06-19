@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+/* Expanded menus are included in the code but currently set to display:none for a better view of the general page */
+
+/*
+--------------------------------------
+CSS COMMON TO BOTH PAGES
+--------------------------------------
+*/
+
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+a {
+  color: rgb(13, 163, 142);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  padding: 0;
+  text-align: left;
+}
+
+/* Common layout classes */
+
+.inline-block {
+  display:inline-block;
+}
+
+.tabs {
+  border-bottom: 0.04em rgb(216, 217, 218) solid;
+  padding: 1em;
+}
+
+/* Common button/links classes */
+
+.arrow {
+  width: 1em;
+}
+
+.color-box {
+  border: none;
+  height: 2em;
+  width: 2em;
+}
+
+.color-blue {
+  background-color: rgb(102, 102, 153);
+}
+
+.color-lime {
+  background-color: rgb(153, 153, 51);
+}
+
+.color-strawberry {
+  background-color: rgb(204, 51, 51);
+}
+
+.icon {
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+}
+
+.logo img {
+  height: 2.6em;
+}
+
+.size-box {
+  border: 0.01em black solid;
+  text-align: center;
+  height: 2em;
+  width: 2em;
+}
+
+.selected {
+  border: 0.02em rgb(13, 163, 142) solid;
+}
+
+
+/* Sticky topbar */
+
+.sticky-topbar {
+  background-color: rgb(54, 52, 54);
+  height: 3.25em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: 0.625em;
+  left: 1em;
+}
+
+.logo {
+ position: absolute;
+ top: 0.48em;
+ left: 4em;
+}
+
+.search .icon {
+  position: absolute;
+  top: 0.625em;
+  right: 4em;
+}
+
+.sticky-topbar .shopping-bag {
+  position: absolute;
+  top: 0.625em;
+  right: 1em;
+}
+
+/* nav */
+nav a {
+  color: rgb(0, 0, 0);
+}
+
+.menu-open {
+  background-color: rgb(255, 255, 255);
+  display: none;
+  position: absolute;
+  top: 3.25em;
+  width: 100%;
+}
+
+.instructions {
+  background-color: rgb(216, 217, 218);
+  padding: 0.625em 1em;
+}
+
+/* search */
+.searcharea {
+  background-color: white;
+  display: none;
+  padding: 1em;
+  position: absolute;
+  top: 3.25em;
+  width: 100%;
+}
+
+input[type="search"] {
+  background-color: rgb(255, 255, 255);
+  border: 0;
+  border-bottom: 0.04em rgb(216, 217, 218) solid;
+  outline: none;
+  width: 100%;
+}
+
+/* product overview */
+.product-primary-information {
+  padding: 1em;
+}
+
+.product-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+}
+
+.one-line-product-description {
+  margin-bottom: 0.5em;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.old-price {
+  font-size: 0.9em;
+  margin-left: 0.2em;
+  text-decoration: line-through;
+}
+
+/* Footer */
+
+footer {
+  background-color: rgb(54, 52, 54);
+  margin-top:2em;
+  padding: 1.2em;
+  text-align: center;
+}
+
+.social-media {
+  margin: 0 0 0.5em;
+}
+
+footer .icon {
+  margin: 0.4em;
+}
+
+.copyright {
+  color: rgb(255, 255, 255);
+}
+
+/* Common text-formatting classes */
+
+.bold {
+  font-weight: 600;
+}
+
+.dimmed {
+  color: rgb(153, 153, 153);
+}
+
+.emphasis {
+  color: rgb(239, 61, 35);
+  font-weight: bold;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.hide {
+  display: none;
+}
+
+/*
+--------------------------------------
+CSS PAGE 1
+--------------------------------------
+*/
+
+.dresses-page {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "filters"
+    "products";
+  margin-top: 3.25em;
+}
+
+/* Main header */
+.dresses-page header {
+  grid-area: header;
+}
+
+.breadcrumbs {
+  padding: 1.2em 1em 0.8em;
+}
+
+.category-title {
+  font-size: 2em;
+  margin: 0.2em 0.417em 0.6em;
+}
+
+/* Filters */
+.filters {
+  grid-area: filters;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sort-tab, .refine-tab {
+  border: 0.05em rgb(120, 120, 120) solid;
+}
+
+.sort-tab {
+  border-left: none;
+  grid-column: 1/2;
+  grid-row: 1/2;
+
+}
+
+.refine-tab {
+  border-right: none;
+  border-left: none;
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.sorting-criteria, .refine-criteria {
+ grid-column: 1/3;
+}
+
+.refine-criteria {
+  display: none;
+  padding: 1em 1em 0;
+}
+
+.sorting-criteria {
+  display: none;
+}
+
+.last-tab {
+  border-bottom: none;
+}
+
+.sort-button, .refine-button {
+  padding: 0.5em 1em;
+  position: relative;
+  width: 100%;
+}
+
+.filters .arrow {
+  height: 1.3em;
+  width: 1.3em;
+  position: absolute;
+  right: 1em;
+}
+
+.sort {
+  position: relative;
+  width: 100%;
+}
+
+.checkmarks {
+  display: inline-block;
+  height: 1.5em;
+  width: 1.3em;
+  position: absolute;
+  right: 0;
+}
+
+.refine-criterion {
+  margin: 0 0 0.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.refine-by-price, .refine-by-size {
+  margin-top: 1.5em;
+}
+
+.clear-all {
+  border: none;
+  text-transform: uppercase;
+  margin: 1em 0 1em;
+  padding: 0;
+}
+
+
+/* Products */
+
+.products {
+  grid-area: products;
+  display: grid;
+  grid-gap: 2em;
+}
+
+.product-img img{
+  width: 100%;
+}
+
+/* load more */
+.load-all {
+  grid-column: 1 / span 2;
+  text-align: center;
+  width: 10em;
+  margin: 2em auto;
+}
+
+
+/*
+--------------------------------------
+CSS PAGE 2
+--------------------------------------
+*/
+
+.product-page {
+  margin-top: 3.25em;
+}
+
+.product-full {
+  display: grid;
+  grid-template-areas:
+    "image"
+    "description";
+}
+
+.product-images {
+  grid-area: image;
+}
+
+.product-img {
+  position: relative;
+}
+
+.product-img .arrow{
+  position: absolute;
+  width: 2em;
+}
+
+.product-img .arrow.left {
+  left: 1em;
+  top: 50%;
+}
+
+.product-img .arrow.right {
+  right: 1em;
+  top: 50%;
+}
+
+.slideshow {
+  display: none;
+}
+
+.product-description {
+  grid-area: description;
+}
+
+/* Selection form */
+
+.selection-form {
+  padding: 1em;
+}
+
+.color-selection {
+  margin-bottom: 1em;
+}
+
+.size-selection {
+  margin-bottom: 2em;
+}
+
+.selection {
+  margin-bottom: 0.5em;
+}
+
+/* Add to bag button */
+
+.call-to-action {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.action-button {
+  background-color: rgb(13, 163, 142);
+  color: rgb(255, 255, 255);
+  padding: 0.625em 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* Product details */
+
+.product-details {
+  margin: 1em 0 2em;
+}
+
+.click-for-info {
+  margin-bottom: 0.5em;
+  width: 100%;
+  position: relative;
+}
+
+.subsection {
+  font-size: 1.2em;
+}
+
+.product-details .arrow {
+  display: inline-block;
+  width: 2em;
+  position: absolute;
+  right: 0;
+}
+
+.expanded-description {
+  line-height: 1.5;
+  width: 95%;
+}
+
+/*
+--------------------------------------
+CSS RESPONSIVE
+--------------------------------------
+*/
+
+/* PAGE 2 */
+@media screen and (min-width: 538px) {
+  .product-page .product-title {
+    font-size: 2em;
+    margin-bottom: 0.1em;
+  }
+
+  .product-img .arrow{
+    width: 3em;
+  }
+}
+
+@media screen and (min-width: 660px) {
+  /* TOPBAR*/
+  .menu-toggle {
+  	display: none;
+  }
+
+  .logo {
+    left: 1em;
+  }
+
+  .search .icon {
+    right: 20.6em;
+  }
+
+  .searcharea {
+    background: transparent;
+    display: inline-block;
+    padding: 0.3125em 0 0;
+    top: 0.625em;
+    right: 4em;
+    width: 16em;
+  }
+
+  input[type="search"] {
+    background: transparent;
+    color: rgb(255,255,255);
+  }
+
+  input[type="search"]::placeholder {
+    color: rgb(210,210,210);
+  }
+
+  .menu-open {
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(54, 52, 54);
+  }
+
+  .instructions {
+    display: none;
+  }
+
+  .menu-open .tabs {
+    display: inline-block;
+    border: none;
+    padding: 1em;
+  }
+
+  .menu-open a {
+    color: rgb(255,255,255);
+  }
+
+  /* PAGE 1 */
+  .dresses-page {
+    margin-top: 6.4375em;
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 1.4em;
+  }
+
+  .sorting-criteria {
+    border-right: 0.05em rgb(120, 120, 120) solid;
+    border-bottom: 0.05em rgb(120, 120, 120) solid;
+    grid-column: 1/2;
+    margin-bottom: 1em;
+  }
+
+  .refine-criteria {
+    border-left: 0.05em rgb(120, 120, 120) solid;
+    border-bottom: 0.05em rgb(120, 120, 120) solid;
+    grid-column: 2/3;
+    margin-bottom: 1em;
+  }
+
+
+  /* PAGE 2 */
+  .product-page {
+    margin-top: 6.4375em;
+  }
+}
+
+@media screen and (min-width: 708px) {
+  /* PAGE 2 */
+  .product-description {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 878px) {
+  /* PAGE 1 */
+  .dresses-page {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header header"
+      "filters products products products";
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .category-title {
+    margin-bottom: 1em;
+    }
+
+  .breadcrumbs {
+    padding-top: 1.2em;
+    padding-bottom: 1em;
+    margin-top: 0.5em;
+    }
+
+  .filters {
+    display: block;
+  }
+
+  .sort-tab, .refine-tab {
+    border: 0.05em rgb(120, 120, 120) solid;
+  }
+
+  .sorting-criteria, .refine-criteria {
+    display: block;
+    border: none;
+  }
+
+  .sorting-criteria {
+    margin-bottom: 1em;
+  }
+
+  .load-all {
+    text-align: left;
+    margin: 1em 0 4em;
+  }
+
+  .products {
+    padding: 0 1em;
+  }
+}
+
+@media screen and (min-width: 890px) {
+  /* PAGE 2 */
+  .product-full {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "image image image description description"
+      "slideshow slideshow slideshow description description";
+    grid-gap: 0.5em;
+    padding: 2em 0 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    }
+
+  .product-images .arrow {
+    display: none;
+    }
+
+  .product-description {
+    width: 100%;
+    }
+
+  .product-full .product-primary-information {
+    padding-top: 0;
+    padding-bottom: 2em;
+    }
+
+  .slideshow {
+    display: grid;
+    grid-area: slideshow;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.3em;
+    }
+
+  .call-to-action {
+    width: 70%;
+    margin-bottom: 1em;
+    }
+}
+
+
+@media screen and (min-width: 1134px) {
+  /* PAGE 1 */
+  .dresses-page {
+    margin-top: 3.25em;
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* TOPBAR */
+
+  .menu-open {
+    position: static;
+  }
+
+  .menu-open ul {
+    position: absolute;
+    top: 1.1em;
+    left: 8em;
+  }
+
+  .menu-open .tabs {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  /* PAGE 2 */
+  .product-page {
+    margin-top: 3.125em;
+  }
+}
+
+@media screen and (min-width: 1425px) {
+  /* PAGE 1 */
+  .dresses-page {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  /* PAGE 2 */
+  .product-page {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+  }
+}

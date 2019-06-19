@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ruby Clothes | Dresses</title>
+    <meta name="description" content="Buy beautiful high-quality dresses">
+    <meta name="author" content="Gabriela Kostova">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+    <!--Body header appears on all pages-->
+    <header class="sticky-topbar">
+
+      <!--Navigation-->
+      <nav>
+        <!--Menu icon-->
+        <button class="icon menu-toggle" type="button" name="menu-toggle">
+          <img src="img/menu-icon.svg" alt="Toggle menu">
+        </button>
+
+        <!--Section expands when menu icon clicked-->
+        <section class="menu-open">
+          <!--Nav header-->
+          <h2 class="instructions bold uppercase">Shop by category</h2>
+
+          <!--Menu tabs-->
+          <ul>
+            <li class="tabs">
+              <a href="#">All Clothing</a>
+            </li>
+
+            <li class="tabs">
+              <a href="index.html">Dresses</a>
+            </li>
+
+            <li class="tabs">
+              <a href="#">Tops</a>
+            </li>
+
+            <li class="tabs">
+              <a href="#">Pants</a>
+            </li>
+
+            <li class="tabs">
+              <a href="#">Skirts</a>
+            </li>
+
+            <li class="tabs">
+              <a href="#">Accessories</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+
+      <!--Logo-->
+      <span class="logo">
+        <a href="index.html">
+          <img src="img/rubylogo.svg" alt="Ruby logo">
+        </a>
+      </span>
+
+      <!--Search-->
+      <section class="search">
+        <!--Search button-->
+        <button class="icon" type="button" name="toggle-search-bar">
+          <img src="img/search-icon.svg" alt="Toggle search bar">
+        </button>
+
+        <!--Search area - expands when search icon clicked-->
+        <form class="searcharea">
+          <input type="search" id="product-search" name="q" placeholder="type keyword">
+        </form>
+      </section>
+
+      <!--Shopping bag link-->
+      <div class="icon shopping-bag">
+        <a href="#">
+          <img src="img/shopping-icon.svg" alt="Go to shopping bag">
+        </a>
+      </div>
+    </header>
+
+    <!--Main-->
+    <main class="dresses-page">
+
+      <!--Main header - contains breadcrumbs, shopping category name-->
+      <header>
+        <!--Breadcrumbs-->
+        <div class="breadcrumbs">
+          <span class="dimmed">home</span>/<span class="bold">dresses</span>
+        </div>
+
+        <!--Category title-->
+        <h1 class="category-title">Dresses</h1>
+      </header>
+
+      <!--filters-->
+      <div class="filters">
+        <!--sort-tab-->
+        <div class="sort-tab">
+          <button class="sort-button" type="button" name="sort">
+            <span class="filter-label">Sort</span>
+            <span class="arrow">
+              <img src="img/expand-icon.svg" alt="Expand section">
+            </span>
+          </button>
+        </div>
+
+        <!--sort criteria-->
+        <ul class="sorting-criteria">
+          <li class="tabs">
+            <button class="sort" id="sort-hl-btn" type="button" name="price-descending">
+              <span class="sort-criterion">Price (high-to-low)</span>
+            </button>
+          </li>
+
+          <li class="tabs">
+            <button class="sort" id="sort-lh-btn" type="button" name="price-ascending">
+              <span class="sort-criterion">Price (low-to-high)</span>
+            </button>
+          </li>
+
+          <li class="tabs last-tab">
+            <button class="sort" id="sort-by-sale-btn" type="button" name="sale-first">
+              <span class="sort-criterion">Sale items first</span>
+            </button>
+          </li>
+        </ul>
+
+        <!--refine-tab-->
+        <div class="refine-tab">
+          <button class="refine-button" type="button" name="refine">
+            <span class="filter-label">Refine</span>
+            <span class="arrow">
+              <img src="img/expand-icon.svg" alt="Expand section">
+            </span>
+          </button>
+        </div>
+
+        <!--refine criteria-->
+        <div class="refine-criteria">
+          <!--refine by color -->
+          <section class="refine-by-color">
+            <h2 class="refine-criterion">Color</h2>
+
+            <ul class="color-options">
+              <li class="inline-block">
+                <button type="button" class="color-box color-strawberry" data-color="strawberry" id="strawberry-color-btn" name="refine-by-strawberry">
+                </button>
+              </li>
+
+              <li class="inline-block">
+                <button type="button" class="color-box color-lime" name="refine-by-lime">
+                </button>
+              </li>
+
+              <li class="inline-block">
+                <button type="button" class="color-box color-blue" name="refine-by-blue">
+                </button>
+              </li>
+            </ul>
+          </section>
+
+          <!--refine by size-->
+          <section class="refine-by-size">
+            <h2 class="refine-criterion">Size</h2>
+            <ul class="size-options">
+              <li class="inline-block">
+                <button type="button" class="size-box" name="refine-by-xs">
+                  XS
+                </button>
+              </li>
+
+              <li class="inline-block">
+                <button type="button" class="size-box" name="refine-by-s">
+                  S
+                </button>
+              </li>
+
+              <li class="inline-block">
+                <button type="button" class="size-box" name="refine-by-m">
+                  M
+                </button>
+              </li>
+
+              <li class="inline-block">
+                <button type="button" class="size-box" name="refine-by-l">
+                  L
+                </button>
+              </li>
+
+              <li class="inline-block">
+                <button type="button" class="size-box" name="refine-by-xl">
+                  XL
+                </button>
+              </li>
+            </ul>
+          </section>
+
+          <!--refine by price-->
+          <section class="refine-by-price">
+            <h2 class="refine-criterion">Price in CAD</h2>
+            <ul class="price-options">
+              <li class="tabs">
+                <button class="sort" id="lowest-price-range-btn" type="button" name="lowest-price-range">
+                  <span class="sort-criterion">Under $60</span>
+                </button>
+              </li>
+
+              <li class="tabs">
+                <button class="sort" id="medium-price-range-btn" type="button" name="medium-price-range">
+                  <span class="sort-criterion">$60 to $100</span>
+                </button>
+              </li>
+
+              <li class="tabs">
+                <button class="sort" id="highest-price-range-btn" type="button" name="highest-price-range">
+                  <span class="sort-criterion">Over $100</span>
+                </button>
+              </li>
+            </ul>
+          </section>
+
+          <!--clear all-->
+          <!-- <button class="clear-all" type="reset" name="clear-all">
+            Clear all
+          </button> -->
+        </div>
+
+        <!--load all-->
+        <div class="load-all">
+          <button class = "action-button" id="load-all-btn">All Products</button>
+        </div>
+      
+      </div>
+
+      <!--products section-->
+      <ul class="products" id="product-list">
+
+        <!--products-->
+
+      </ul>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer>
+      <!--social media icons-->
+      <ul class="social-media">
+        <li class="icon">
+          <a href="#">
+            <img src="img/twitter-icon.svg" alt="Twitter">
+          </a>
+        </li>
+
+        <li class="icon">
+          <a href="#">
+            <img src="img/fb-icon.svg" alt="Facebook">
+          </a>
+        </li>
+
+        <li class="icon">
+          <a href="#">
+            <img src="img/insta-icon.svg" alt="Instagram">
+          </a>
+        </li>
+      </ul>
+
+      <div class="copyright">
+        &copy; 2019 Ruby
+      </div>
+    </footer>
+    <script src="js/script.js"> </script>
+  </body>
+</html>
