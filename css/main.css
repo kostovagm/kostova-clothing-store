@@ -57,16 +57,29 @@ button {
   width: 2em;
 }
 
-.color-blue {
-  background-color: rgb(102, 102, 153);
-}
-
-.color-lime {
-  background-color: rgb(153, 153, 51);
-}
-
 .color-strawberry {
-  background-color: rgb(204, 51, 51);
+  background-color: #DF4442;
+}
+
+.color-ivory {
+  background-color: #FFFFFF;
+  border: 0.02em rgb(120, 120, 120) solid;
+}
+
+.color-pink {
+  background-color: #C36D88;
+}
+
+.color-brown {
+  background-color: #905C50;
+}
+
+.color-raven {
+  background-color: #090A04;
+}
+
+.color-purple {
+  background-color: #6C2243;
 }
 
 .icon {
@@ -133,10 +146,10 @@ nav a {
 
 .menu-open {
   background-color: rgb(255, 255, 255);
-  display: none;
   position: absolute;
   top: 3.25em;
   width: 100%;
+  display: none;
 }
 
 .instructions {
@@ -209,28 +222,6 @@ footer .icon {
   color: rgb(255, 255, 255);
 }
 
-/* Common text-formatting classes */
-
-.bold {
-  font-weight: 600;
-}
-
-.dimmed {
-  color: rgb(153, 153, 153);
-}
-
-.emphasis {
-  color: rgb(239, 61, 35);
-  font-weight: bold;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.hide {
-  display: none;
-}
 
 /*
 --------------------------------------
@@ -349,8 +340,11 @@ CSS PAGE 1
 
 /* Products */
 
-.products {
+.product-section {
   grid-area: products;
+}
+
+.products {
   display: grid;
   grid-gap: 2em;
 }
@@ -367,6 +361,19 @@ CSS PAGE 1
   margin: 2em auto;
 }
 
+/* pages */
+.pages {
+text-align: center;
+}
+
+.pages li {
+  display: inline-block;
+  margin: 0.4em;
+}
+
+.pages a {
+  color: rgb(0, 0, 0);
+}
 
 /*
 --------------------------------------
@@ -477,6 +484,34 @@ CSS PAGE 2
   line-height: 1.5;
   width: 95%;
 }
+
+/* Common text-formatting classes */
+
+.bold {
+  font-weight: 600;
+}
+
+.dimmed {
+  color: rgb(153, 153, 153);
+}
+
+.emphasis {
+  color: rgb(239, 61, 35);
+  font-weight: bold;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
 
 /*
 --------------------------------------
@@ -623,7 +658,6 @@ CSS RESPONSIVE
   }
 
   .sorting-criteria, .refine-criteria {
-    display: block;
     border: none;
   }
 

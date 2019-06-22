@@ -17,12 +17,12 @@
       <!--Navigation-->
       <nav>
         <!--Menu icon-->
-        <button class="icon menu-toggle" type="button" name="menu-toggle">
+        <button class="icon menu-toggle" id="menu-toggle-btn" type="button" name="menu-toggle">
           <img src="img/menu-icon.svg" alt="Toggle menu">
         </button>
 
         <!--Section expands when menu icon clicked-->
-        <section class="menu-open">
+        <section class="menu-open" id="open-menu-section">
           <!--Nav header-->
           <h2 class="instructions bold uppercase">Shop by category</h2>
 
@@ -63,17 +63,17 @@
       </span>
 
       <!--Search-->
-      <section class="search">
-        <!--Search button-->
-        <button class="icon" type="button" name="toggle-search-bar">
+
+      <form class="search" id="search">
+        <button class="icon" type="submit" name="toggle-search-bar">
           <img src="img/search-icon.svg" alt="Toggle search bar">
         </button>
 
-        <!--Search area - expands when search icon clicked-->
-        <form class="searcharea">
-          <input type="search" id="product-search" name="q" placeholder="type keyword">
-        </form>
-      </section>
+        <div class="searcharea">
+          <input type="search" id="product-search" name="query" placeholder="type keyword">
+        </div>
+      </form>
+
 
       <!--Shopping bag link-->
       <div class="icon shopping-bag">
@@ -101,7 +101,7 @@
       <div class="filters">
         <!--sort-tab-->
         <div class="sort-tab">
-          <button class="sort-button" type="button" name="sort">
+          <button class="sort-button" id="sort-toggle-btn" type="button" name="sort">
             <span class="filter-label">Sort</span>
             <span class="arrow">
               <img src="img/expand-icon.svg" alt="Expand section">
@@ -110,7 +110,7 @@
         </div>
 
         <!--sort criteria-->
-        <ul class="sorting-criteria">
+        <ul class="sorting-criteria" id="open-sort-section">
           <li class="tabs">
             <button class="sort" id="sort-hl-btn" type="button" name="price-descending">
               <span class="sort-criterion">Price (high-to-low)</span>
@@ -131,7 +131,7 @@
         </ul>
 
         <!--refine-tab-->
-        <div class="refine-tab">
+        <div class="refine-tab" id="filter-toggle-btn">
           <button class="refine-button" type="button" name="refine">
             <span class="filter-label">Refine</span>
             <span class="arrow">
@@ -141,26 +141,41 @@
         </div>
 
         <!--refine criteria-->
-        <div class="refine-criteria">
+        <div class="refine-criteria" id="open-filter-section">
           <!--refine by color -->
           <section class="refine-by-color">
             <h2 class="refine-criterion">Color</h2>
 
-            <ul class="color-options">
-              <li class="inline-block">
+            <ul class="color-options" id="color-filters">
+              <!-- <li class="inline-block">
                 <button type="button" class="color-box color-strawberry" data-color="strawberry" id="strawberry-color-btn" name="refine-by-strawberry">
                 </button>
               </li>
 
               <li class="inline-block">
-                <button type="button" class="color-box color-lime" name="refine-by-lime">
+                <button type="button" class="color-box color-ivory" data-color="ivory" id="ivory-color-btn" name="refine-by-blue">
                 </button>
               </li>
 
               <li class="inline-block">
-                <button type="button" class="color-box color-blue" name="refine-by-blue">
+                <button type="button" class="color-box color-pink" data-color="pink" id="pink-color-btn" name="refine-by-pink">
                 </button>
               </li>
+
+              <li class="inline-block">
+                <button type="button" class="color-box color-raven" data-color="raven" id="raven-color-btn" name="refine-by-raven">
+                </button>
+              </li>
+
+              <li class="inline-block">
+                <button type="button" class="color-box color-purple" data-color="purple" id="purple-color-btn" name="refine-by-purple">
+                </button>
+              </li>
+
+              <li class="inline-block">
+                <button type="button" class="color-box color-brown"  data-color="brown" id="brown-color-btn"  name="refine-by-blue">
+                </button>
+              </li> -->
             </ul>
           </section>
 
@@ -169,31 +184,31 @@
             <h2 class="refine-criterion">Size</h2>
             <ul class="size-options">
               <li class="inline-block">
-                <button type="button" class="size-box" name="refine-by-xs">
+                <button type="button" class="size-box" data-size="xs" id="xs-size-btn"  name="refine-by-xs">
                   XS
                 </button>
               </li>
 
               <li class="inline-block">
-                <button type="button" class="size-box" name="refine-by-s">
+                <button type="button" class="size-box" data-size="small" id="small-size-btn"  name="refine-by-s">
                   S
                 </button>
               </li>
 
               <li class="inline-block">
-                <button type="button" class="size-box" name="refine-by-m">
+                <button type="button" class="size-box" data-size="medium" id="medium-size-btn"  name="refine-by-m">
                   M
                 </button>
               </li>
 
               <li class="inline-block">
-                <button type="button" class="size-box" name="refine-by-l">
+                <button type="button" class="size-box" data-size="large" id="large-size-btn"  name="refine-by-l">
                   L
                 </button>
               </li>
 
               <li class="inline-block">
-                <button type="button" class="size-box" name="refine-by-xl">
+                <button type="button" class="size-box" data-size="xlarge" id="xlarge-size-btn" name="refine-by-xl">
                   XL
                 </button>
               </li>
@@ -238,12 +253,28 @@
       </div>
 
       <!--products section-->
-      <ul class="products" id="product-list">
+      <section class="product-section">
+        <ul class="products" id="product-list">
 
-        <!--products-->
+          <!--products-->
 
-      </ul>
-      </section>
+        </ul>
+
+        <!--pagination-->
+        <ol class="pages">
+          <li>
+            <a href="#" id="show-page-one">1</a>
+          </li>
+
+          <li>
+            <a href="#" id="show-page-two">2</a>
+          </li>
+
+          <li>
+            <a href="#" id="show-page-three">3</a>
+          </li>
+        </ol>
+    </section>
     </main>
 
     <!--footer-->
