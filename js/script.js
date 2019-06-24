@@ -57,7 +57,6 @@ const dress5 = {
   size: [`xs`, `small`, `medium`, `large`],
 };
 
-
 const dress6 = {
   image: `everyday-vibes.jpg`,
   name: `Everyday Vibes`,
@@ -206,16 +205,17 @@ const getAllProductsAsHTML = (prods) => {
   return prods.map (formatProductToHtmlString).join(``);
 };
 
-//Function takes an array and appends the formatted HTML string to the HTMl container (<ul>)
+//Function takes an array of products and appends their formatted HTML string to the HTMl container (<ul>)
 const printAllProducts = (prods) => {
   $productList.innerHTML = getAllProductsAsHTML (prods);
-  if (currentProductListAr.length <= 5) {
+  //If statement checks the length of an array to ensure that there are only as many pages displayed as there are products.
+  if (currentProductListAr.length <= productsPerPage) {
     document.getElementById(`show-page-two`).classList.add(`hide`);
     document.getElementById(`show-page-three`).classList.add(`hide`)
-  } else if (currentProductListAr.length > 5 && currentProductListAr.length <= 10) {
+  } else if (currentProductListAr.length > productsPerPage && currentProductListAr.length <= productsPerPage*2) {
     document.getElementById(`show-page-three`).classList.add(`hide`);
     document.getElementById(`show-page-two`).classList.remove(`hide`)
-  } else if (currentProductListAr.length > 10) {
+  } else if (currentProductListAr.length > productsPerPage*2) {
     document.getElementById(`show-page-two`).classList.remove(`hide`);
     document.getElementById(`show-page-three`).classList.remove(`hide`)
   }
@@ -225,8 +225,8 @@ const printAllProducts = (prods) => {
 //--------------------------- << HELPER FUNCTIONS (FILTERS) >> ---------------------------------------//
 
 /************************************************************************************************/
-colorListAr=[];
-sizeListAr=[`xs`, `small`, `medium`, `large`, `xlarge`];
+colorListAr = [];
+sizeListAr = [`xs`, `small`, `medium`, `large`, `xlarge`];
 
 // Function takes an array of products and prints filter buttons for all colors available in the array;
 const printColorBtnsForAllProducts = (prods) => {
@@ -245,7 +245,7 @@ const printColorBtnsForAllProducts = (prods) => {
     })
   };
 
-// Call function to print all available color filters
+// Function prints all available color filters
 printColorBtnsForAllProducts(productListAr);
 
 
@@ -259,17 +259,17 @@ const checkingMenuStatus = (menutype) => {
   }
 
   return section.classList.contains (`active`);
-}
+};
 
 
 //--------------------------- << HELPER FUNCTIONS (SEARCH) >> ---------------------------------------//
 
 /************************************************************************************************/
 
-//function takes a query and prints all element within a specified array that match the query
+//Function takes a query and prints all element within a specified array that match the query
 const showMatchingNames = (query) => {
-  printAllProducts( productListAr.filter( product => product.name.toLowerCase().includes( query.toLowerCase() ) ) );
-}
+  printAllProducts(productListAr.filter(product => product.name.toLowerCase().includes(query.toLowerCase())));
+};
 
 
 
@@ -279,9 +279,9 @@ const showMatchingNames = (query) => {
 let page = 1;
 let productsPerPage = 5;
 
-//Function takes an array and returns the array sliced to the first five products 
+//Function takes an array of products and returns the array sliced to the first five products 
 const sliceAnyArray = (prods, start) => {
-  return prods.slice(start,start+productsPerPage);
+  return prods.slice(start, start + productsPerPage);
 };
 
 
@@ -289,17 +289,17 @@ const sliceAnyArray = (prods, start) => {
 
 /************************************************************************************************/
 
-const $productList = document.getElementById(`product-list`);                            //HTML container element
+const $productList = document.getElementById(`product-list`);                            //Products container 
 
 const $loadAllBtn = document.getElementById(`load-all-btn`);                             //Load All button
 
-const $sortHlBtn = document.getElementById(`sort-hl-btn`);                               //H-L button
+const $sortHlBtn = document.getElementById(`sort-hl-btn`);                               //Sort H-L button
 
-const $sortLhBtn = document.getElementById(`sort-lh-btn`);                               //L-H button
+const $sortLhBtn = document.getElementById(`sort-lh-btn`);                               //Sort L-H button
 
 const $sortBySaleBtn = document.getElementById(`sort-by-sale-btn`);                      //Sale first button
 
-const $lowestPriceRangeBtn = document.getElementById(`lowest-price-range-btn`);          // Lowest price range button
+const $lowestPriceRangeBtn = document.getElementById(`lowest-price-range-btn`);          //Lowest price range button
 
 const $mediumPriceRangeBtn = document.getElementById(`medium-price-range-btn`);          //Medium price range button
 
@@ -307,21 +307,21 @@ const $highestPriceRangeBtn = document.getElementById(`highest-price-range-btn`)
 
 const $showPageOneBtn = document.getElementById(`show-page-one`);                        //Show page 1 button
 
-const $showPageTwoBtn = document.getElementById(`show-page-two`);                        //Show page 1 button
+const $showPageTwoBtn = document.getElementById(`show-page-two`);                        //Show page 2 button
 
-const $showPageThreeBtn = document.getElementById(`show-page-three`);                    //Show page 1 button
+const $showPageThreeBtn = document.getElementById(`show-page-three`);                    //Show page 3 button
 
 const $menuToggleBtn = document.getElementById(`menu-toggle-btn`)                        //Toggle main menu
 
-const $openMenuSection = document.getElementById(`open-menu-section`);                   //Show open main menu section
+const $openMenuSection = document.getElementById(`open-menu-section`);                   //Open main menu section
 
 const $sortToggleBtn = document.getElementById(`sort-toggle-btn`)                        //Toggle sort menu
 
-const $openSortSection = document.getElementById(`open-sort-section`);                   //Show open sort section
+const $openSortSection = document.getElementById(`open-sort-section`);                   //Open sort section
 
 const $filterToggleBtn = document.getElementById(`filter-toggle-btn`)                    //Toggle filter menu
 
-const $openFilterSection = document.getElementById(`open-filter-section`);               //Show open filter menu section
+const $openFilterSection = document.getElementById(`open-filter-section`);               //Open filter menu section
 
 
 
@@ -329,8 +329,8 @@ const $openFilterSection = document.getElementById(`open-filter-section`);      
 
 /************************************************************************************************/
 
-//Load a list of six default products
-window.addEventListener(`load`, printAllProducts (productListAr.slice(0,productsPerPage)));
+//Load a list of six default products as window loads
+// window.addEventListener(`load`, printAllProducts (productListAr.slice(0,productsPerPage)));
 
 
 
@@ -340,30 +340,30 @@ window.addEventListener(`load`, printAllProducts (productListAr.slice(0,products
 
 //When button is clicked, all products appear
 $loadAllBtn.addEventListener(`click`, (event) => {
-  page = 1;
-  currentProductListAr=productListAr;
-  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));
+  page = 1; //reset
+  currentProductListAr = productListAr; //current product array is default array
+  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));  //prints only first five products in current product array
 });
 
 //When button is clicked, sort items by price (h-l)
 $sortHlBtn.addEventListener(`click`, (event) => {
-  page = 1;
-  currentProductListAr = productListAr.map(val => val).sort((a,b) => b.currentPrice - a.currentPrice);
-  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));
+  page = 1; //reset
+  currentProductListAr = productListAr.map(val => val).sort((a,b) => b.currentPrice - a.currentPrice); //current product array is sorted (h-l)
+  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage)); //prints only first five products in current product array
 });
 
 //When button is clicked, sort items by price (l-h)
 $sortLhBtn.addEventListener(`click`, (event) => {
-  page = 1;
-  currentProductListAr = productListAr.map(val => val).sort((a,b) => a.currentPrice - b.currentPrice);
-  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));
+  page = 1; //reset
+  currentProductListAr = productListAr.map(val => val).sort((a,b) => a.currentPrice - b.currentPrice);  //current product array is sorted (l-h)
+  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage)); //prints only first five products in current product array
 });
 
 //When button is clicked, sort items by sale items first
 $sortBySaleBtn.addEventListener(`click`, (event) => {
-  page = 1;
-  currentProductListAr = productListAr.map(val => val).sort((a,b) => Number(b.isOnSale) - Number(a.isOnSale));
-  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));
+  page = 1; //reset
+  currentProductListAr = productListAr.map(val => val).sort((a,b) => Number(b.isOnSale) - Number(a.isOnSale)); //current product array is sorted (sale first)
+  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage)); //prints only first five products in current product array
 });
 
 
@@ -371,22 +371,22 @@ $sortBySaleBtn.addEventListener(`click`, (event) => {
 
 /************************************************************************************************/
 
-//When a color button is clicked, products of this color appear.
+//When a color button is clicked, products of this color appear
 colorListAr.forEach (color => {
   document.getElementById(`${color}-color-btn`).addEventListener(`click`, (event) => {
-    page=1;
-    currentProductListAr = productListAr.map(val => val).filter(prod => prod.color.includes(event.target.dataset.color));
-    printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));
+    page=1; //reset
+    currentProductListAr = productListAr.map(val => val).filter(prod => prod.color.includes(event.target.dataset.color)); //current product array contains only items of a specific color
+    printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage)); //prints only first five products in current product array
   });
 })
 
 
-//When a size button is clicked, products of this size appear.
+//When a size button is clicked, products of this size appear
 sizeListAr.forEach (size => {
   document.getElementById(`${size}-size-btn`).addEventListener(`click`, (event) => {
-    page=1;
-    currentProductListAr = productListAr.map(val => val).filter(prod => prod.size.includes(event.target.dataset.size));
-    printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));
+    page=1; //reset
+    currentProductListAr = productListAr.map(val => val).filter(prod => prod.size.includes(event.target.dataset.size));  //current product array contains only items of a specific size
+    printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage)); //prints only first five products in current product array
   });
 })
 
@@ -396,23 +396,23 @@ sizeListAr.forEach (size => {
 
 //When button is clicked, products in the lowest price range appear
 $lowestPriceRangeBtn.addEventListener(`click`, (event) => {
-  page = 1;
-  currentProductListAr = productListAr.map(val => val).filter(prod => prod.currentPrice < 60);
-  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));
+  page = 1; //reset
+  currentProductListAr = productListAr.map(val => val).filter(prod => prod.currentPrice < 60);  //current product array contains only items under $60
+  printAllProducts (sliceAnyArray (currentProductListAr, (page - 1)*productsPerPage)); //prints only first five products in current product array
 });
 
 //When button is clicked, products in the middle price range appear.
 $mediumPriceRangeBtn.addEventListener (`click`, (event) => {
-  page = 1;
-  currentProductListAr = productListAr.map(val => val).filter(prod => prod.currentPrice >= 60 && prod.currentPrice <= 100 );
-  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));
+  page = 1; //reset
+  currentProductListAr = productListAr.map(val => val).filter(prod => prod.currentPrice >= 60 && prod.currentPrice <= 100 );  //current product array contains only items  $60 - $100
+  printAllProducts (sliceAnyArray (currentProductListAr, (page - 1)*productsPerPage)); //prints only first five products in current product array
 });
 
 //When button is clicked, products in the highest price range appear.
 $highestPriceRangeBtn.addEventListener (`click`, (event) => {
-  page = 1;
-  currentProductListAr = productListAr.map(val => val).filter(prod => prod.currentPrice > 100);
-  printAllProducts (sliceAnyArray (currentProductListAr, (page-1)*productsPerPage));
+  page = 1; //reset
+  currentProductListAr = productListAr.map(val => val).filter(prod => prod.currentPrice > 100);  //current product array contains only items over $100
+  printAllProducts (sliceAnyArray (currentProductListAr, (page - 1)*productsPerPage)); //prints only first five products in current product array
 });
 
 
@@ -453,6 +453,7 @@ $menuToggleBtn.addEventListener(`click`, (event) => {
 $sortToggleBtn.addEventListener(`click`, (event) => {
   $openSortSection.classList.toggle(`active`);
   let isOpen = checkingMenuStatus (`filter`); 
+  //If statement checks if the competing filter menu is open, and if it is, closes it;
   if (isOpen) {
     $openFilterSection.classList.remove(`active`);
   }
@@ -462,6 +463,7 @@ $sortToggleBtn.addEventListener(`click`, (event) => {
 $filterToggleBtn.addEventListener(`click`, (event) => {
   $openFilterSection.classList.toggle(`active`);
   let isOpen = checkingMenuStatus (`sort`); 
+  //If statement checks if the competing sort menu is open, and if it is, closes it;
   if (isOpen) {
     $openSortSection.classList.remove(`active`);
   }
@@ -471,13 +473,13 @@ $filterToggleBtn.addEventListener(`click`, (event) => {
 
 /************************************************************************************************/
 
-//When clicked prints all elements in the array that match the query specified in the search box
+//When button is clicked, print all elements in the array that match the query specified in the search box
 document.getElementById(`search`).addEventListener(`submit`, (event) => {
-  // Stops the form submitting to a new page
+  //Stops the form submitting to a new page
   event.preventDefault();
 
   showMatchingNames(document.getElementById(`search`).query.value);
-
+  //Clears query from form after search is completed
   document.getElementById(`search`).reset();
 });
 
